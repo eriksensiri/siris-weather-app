@@ -65,7 +65,7 @@ function cityTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = response.data.main.wind[0].speed;
+  wind.innerHTML = response.data.main.wind.speed;
 }
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
