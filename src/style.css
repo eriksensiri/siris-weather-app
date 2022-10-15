@@ -117,3 +117,7 @@ footer {
   margin-top: 10px;
   color: #60abb0;
 }
+a {
+  color: #60abb0;
+  text-decoration: none;
+}
