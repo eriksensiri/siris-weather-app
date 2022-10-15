@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pluss Homework week 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="container-display">
+        <div class="weather">
+          <form class="search-bar" id="location-search">
+            <div class="row">
+              <div class="col-6">
+                
+                <input
+                  type="search"
+                  placeholder="Type your weather destination"
+                  autofocus="on"
+                  id="city-Input"
+                  class="form-control shadow-sm search-input"
+                />
+              </div>
+              <div class="col-sm-3">
+                <button
+                  type="submit"
+                  value="Search"
+                  class="form-control btn shadow-sm location-btn"
+                  id="submit-button">Search</button>
+              </div>
+              <div class="col-3">
+                <button
+                  type="submit"
+                  value="Current city"
+                  class="form-control btn shadow-sm location-btn"
+                  id="current-location-button">
+                  Current city</button>
+                
+              </div>
+            </div>
+          </form>
+
+          <div class="display-city">
+            <div class="row">
+              <div class="col-5">
+                <h1 id="current-location">Oslo</h1>
+                <div id="now-weather" class="current-info">Clouds</div>
+                <div class="current-info">
+                  Max:
+                  <span class="max-temperature">23</span>
+                  ℃ | Min:
+                  <span class="min-temperature">22</span>
+                  ℃
+                </div>
+                <span class="current-temperature" id="current-temperature">23</span>
+                <span class="units">
+                  <a href="#" id="celsius">°C |</a>
+                  <a href="#" id="fahrenheit">°F</a>
+                </span>
+              </div>
+              
+              
+              </span>
+              <div class="col-4">
+                <div>
+                  <img
+                    src="src/icons/clouds.png"
+                    alt="Clouds"
+                    class="weather-emoji"
+                    id="weather-emoji"
+                  />
+                </div>
+              </div>
+              <div class="col-3">
+                <ul class="date-time">
+                  <li class="current-info" id="time">Tuesday 20:30</li>
+                  <li class="current-info">
+                    Humidity:
+                    <span id="humidity">65</span>
+                    %
+                  </li>
+                  <li class="current-info">
+                    Wind:
+                    <span id="wind">33</span>
+                    km/ms
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="forecast" class="day">
+          <div class="row">
+            <div class="col-sm-2 day">
+              <div class="expected-day">Wed</div>
+              <img
+                src="src/icons/cloud_sun.png"
+                alt="cloud_sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">25° | </span>
+                <span class="forecast-expected-temp-mon">22°</span>
+              </div>
+            </div>
+            <div class="col-sm-2 day">
+              <div class="expected-day">Thu</div>
+              <img
+                src="src/icons/cloud_sun.png"
+                alt="ligth_rain"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">20° | </span>
+                <span class="forecast-expected-temp-mon">17°</span>
+              </div>
+            </div>
+            <div class="col-sm-2 day">
+              <div class="expected-day">Fri</div>
+              <img
+                src="src/icons/cloud_sun.png"
+                alt="cloud_sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">21° | </span>
+                <span class="forecast-expected-temp-mon">19°</span>
+              </div>
+            </div>
+            <div class="col-sm-2 day">
+              <div class="expected-day">Sat</div>
+              <img
+                src="src/icons/sun.png"
+                alt="sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">23° | </span>
+                <span class="forecast-expected-temp-mon">20°</span>
+              </div>
+            </div>
+            <div class="col-sm-2 day">
+              <div class="expected-day">Sun</div>
+              <img
+                src="src/icons/sun.png"
+                alt="sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">25° | </span>
+                <span class="forecast-expected-temp-mon">22°</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>This site was coded by Siri Eriksen</footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
