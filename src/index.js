@@ -61,6 +61,9 @@ function cityTemperature(response) {
   let highestTemperature = Math.round(response.data.main.temp_max);
   let maxTemperature = document.querySelector(".max-temperature");
   maxTemperature.innerHTML = `${highestTemperature}`;
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
 }
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
