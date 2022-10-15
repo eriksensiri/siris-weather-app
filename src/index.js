@@ -53,7 +53,7 @@ function cityTemperature(response) {
   currentCity.innerHTML = `${city}`;
 
   let nowWeather = document.querySelector("#now-wheather");
-  nowWeather.innerHTML = response.data.main.description;
+  nowWeather.innerHTML = response.data.weather[0].description;
   let lowestTemperature = Math.round(response.data.main.temp_min);
   let minTemperature = document.querySelector(".min-temperature");
   minTemperature.innerHTML = `${lowestTemperature}`;
