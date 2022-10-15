@@ -1,0 +1,119 @@
+body {
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  display: block;
+  margin: 0 auto;
+  padding: 200px 150px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-display {
+  max-width: 900px;
+  border-radius: 30px;
+  padding: 10px 15px;
+  margin: 0 auto;
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+.container-display,
+.search-input {
+  box-shadow: 0 3px 3px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+}
+.weather {
+  padding: 30px 25px;
+}
+div {
+  display: block;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-input {
+  border-radius: 8px;
+  border: none;
+  color: #5b6376;
+}
+
+.location-btn,
+.location-btn:hover {
+  display: inline-block;
+  margin: 0;
+  background-color: #d1f0ee;
+  color: #5b6376;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 150ms ease-in-out;
+}
+.location-btn:hover {
+  background-color: #296d89;
+  color: #d1f0ee;
+}
+.form-control {
+  width: 100%;
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+.display-city {
+  margin: 50px 0;
+  text-align: center;
+}
+h1,
+.current-temperature {
+  font-size: 60px;
+  line-height: 60px;
+  margin-top: 20px;
+  color: #f7f1e3;
+}
+.current-info,
+.expected-day,
+.forecast-expected-temp-max {
+  color: #f7f1e3;
+}
+.forecast-expected-temp-max {
+  font-size: medium;
+}
+.forecast-expected-temp-mon {
+  color: #d1ccc0;
+  font-size: medium;
+}
+.units {
+  position: relative;
+  top: -20px;
+  font-size: 20px;
+  color: #f7f1e3;
+}
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+.col-4 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+.expected-temp-emoji {
+  width: 50px;
+  display: block;
+  margin: auto;
+  padding-bottom: 5px;
+}
+.weather-emoji {
+  width: 200px;
+  margin: 0;
+  display: block;
+  padding-top: 70px;
+}
+
+.date-time {
+  list-style: none;
+  margin-top: 50px;
+  padding: 0;
+}
+.day {
+  margin: 2px 14px;
+  padding: 8px 13px;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  margin-top: 10px;
+  color: #60abb0;
+}
