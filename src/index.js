@@ -43,7 +43,8 @@ let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
 function weatherEmoji() {
-  if (nowWeather === "clear sky") return `src/icons/sun.png`;
+  if (nowWeather === "response.data.weather[0].description.clear sky")
+    return `src/icons/sun.png`;
 }
 
 function cityTemperature(response) {
