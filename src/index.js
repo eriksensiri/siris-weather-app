@@ -102,7 +102,7 @@ function weatherEmoji() {
     return `src/icons/cloud_wind.png`;
   }
   let weatherEmoji = document.querySelector("#weather-emoji");
-  weatherEmoji.setAttribute = response.data.weather[0].description;
+  weatherEmoji.setAttribute(response.data.weather[0].description);
 }
 
 console.log(response.data.weather[0].description);
