@@ -42,7 +42,7 @@ celsiusTemperature.addEventListener("click", celsiusConverter);
 let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
-function showIcon() {
+function weatherEmoji() {
   if (nowWeather === "clear sky") return `src/icons/sun.png`;
 }
 
