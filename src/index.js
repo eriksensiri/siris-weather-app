@@ -92,16 +92,15 @@ function showIcon() {
   if (nowWeather === "rain") {
     return `src/icons/ligth_rain.png`;
   }
-}
-
-if (nowWeather === "thunderstorm") {
-  return `src/icons/cloud_rain_ligthing.png`;
-}
-if (nowWeather === "snow") {
-  return `src/icons/cloud_snow_rain.png`;
-}
-if (nowWeather === "mist") {
-  return `src/icons/cloud_wind.png`;
+  if (nowWeather === "thunderstorm") {
+    return `src/icons/cloud_rain_ligthing.png`;
+  }
+  if (nowWeather === "snow") {
+    return `src/icons/cloud_snow_rain.png`;
+  }
+  if (nowWeather === "mist") {
+    return `src/icons/cloud_wind.png`;
+  }
 }
 
 console.log(response.data.weather[0].description);
