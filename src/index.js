@@ -68,7 +68,7 @@ function cityTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
 
-function showIcon() {
+function weatherEmoji() {
   if (nowWeather === "clear sky") {
     return `icons/sun.png`;
   }
@@ -101,6 +101,8 @@ function showIcon() {
   if (nowWeather === "mist") {
     return `src/icons/cloud_wind.png`;
   }
+  let weatherEmoji = document.querySelector("#weather-emoji");
+  weatherEmoji.setAttribute = response.data.weather[0].description;
 }
 
 console.log(response.data.weather[0].description);
