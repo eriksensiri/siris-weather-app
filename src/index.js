@@ -69,32 +69,42 @@ function cityTemperature(response) {
 }
 
 function showIcon() {
-  if (nowWeather === "clear sky") { return `icons/sun.png`; }
-  else {
-    if (nowWeather === "few clouds") { return `icons/cloud_sun.png`; }
+  if (nowWeather === "clear sky") {
+    return `icons/sun.png`;
   }
-else {
-    if (nowWeather === "scattered clouds") { return `icons/cloudy_sun.png`; }
+
+  if (nowWeather === "few clouds") {
+    return `icons/cloud_sun.png`;
   }
-else {
-    if (nowWeather === "broken clouds") { return `src/icons/clouds.png`; }
+
+  if (nowWeather === "scattered clouds") {
+    return `icons/cloudy_sun.png`;
   }
-else {
-    if (nowWeather === "shower rain") { return `src/icons/sun.png`; }
+
+  if (nowWeather === "broken clouds") {
+    return `src/icons/clouds.png`;
   }
-else {
-    if (nowWeather === "rain") { return `src/icons/ligth_rain.png`; }
+
+  if (nowWeather === "shower rain") {
+    return `src/icons/sun.png`;
   }
-else {
-    if (nowWeather === "thunderstorm") { return `src/icons/cloud_rain_ligthing.png`; }
-  }
-else {
-    if (nowWeather === "snow") { return `src/icons/cloud_snow_rain.png`; }
-  }
-else {
-    if (nowWeather === "mist") { return `src/icons/cloud_wind.png`; }
+
+  if (nowWeather === "rain") {
+    return `src/icons/ligth_rain.png`;
   }
 }
+
+if (nowWeather === "thunderstorm") {
+  return `src/icons/cloud_rain_ligthing.png`;
+}
+if (nowWeather === "snow") {
+  return `src/icons/cloud_snow_rain.png`;
+}
+if (nowWeather === "mist") {
+  return `src/icons/cloud_wind.png`;
+}
+
+console.log(response.data.weather[0].description);
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
