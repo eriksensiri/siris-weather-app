@@ -42,6 +42,10 @@ celsiusTemperature.addEventListener("click", celsiusConverter);
 let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
+function showIcon() {
+  if (now-weather === "clear sky") {
+    return `icons/sun.png`;}
+
 function cityTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
