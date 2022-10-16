@@ -42,11 +42,6 @@ celsiusTemperature.addEventListener("click", celsiusConverter);
 let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
-function weatherEmoji() {
-  if (nowWeather === "response.data.weather[0].description.clear sky")
-    return `src/icons/sun.png`;
-}
-
 function cityTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -71,6 +66,10 @@ function cityTemperature(response) {
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+}
+
+function weatherEmoji() {
+  if (nowWeather === "clear sky") return `src/icons/sun.png`;
 }
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
