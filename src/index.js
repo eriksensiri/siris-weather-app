@@ -71,10 +71,10 @@ function cityTemperature(response) {
 function showIcon() {
   if (nowWeather === "clear sky") { return `icons/sun.png`; }
   else {
-    if (nowWeather === "few clouds") { return `src/icons/cloud_sun.png`; }
+    if (nowWeather === "few clouds") { return `icons/cloud_sun.png`; }
   }
 else {
-    if (nowWeather === "scattered clouds") { return `src/icons/cloudy_sun.png`; }
+    if (nowWeather === "scattered clouds") { return `icons/cloudy_sun.png`; }
   }
 else {
     if (nowWeather === "broken clouds") { return `src/icons/clouds.png`; }
