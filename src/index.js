@@ -83,8 +83,8 @@ function showPosition(position) {
   axios.get(apiUrl).then(cityTemperature);
 }
 function weatherEmoji(response) {
-  let nowWeather = response.data.weather[0].description;
-  nowWeather = document.querySelector("#now-weather");
+  let weather = document.querySelector("#now-weather");
+  weather = response.data.weather[0].description;
 
   let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
