@@ -49,6 +49,9 @@ function cityTemperature(response) {
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
 
+  let description = response.data.weather[0].description;
+  description = document.querySelector("#now-weather");
+
   let lowestTemperature = Math.round(response.data.main.temp_min);
   let minTemperature = document.querySelector(".min-temperature");
   minTemperature.innerHTML = `${lowestTemperature}`;
@@ -58,7 +61,7 @@ function cityTemperature(response) {
   maxTemperature.innerHTML = `${highestTemperature}`;
 
   let weatherEmoji = response.data.weather[0].icon();
-  let weatherIcon = document.querySelector("#weather-emoji");
+  weatherIcon = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
