@@ -49,9 +49,6 @@ function cityTemperature(response) {
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
 
-  let description = response.data.weather[0].description;
-  description = document.querySelector("#now-weather");
-
   let lowestTemperature = Math.round(response.data.main.temp_min);
   let minTemperature = document.querySelector(".min-temperature");
   minTemperature.innerHTML = `${lowestTemperature}`;
@@ -60,6 +57,15 @@ function cityTemperature(response) {
   let maxTemperature = document.querySelector(".max-temperature");
   maxTemperature.innerHTML = `${highestTemperature}`;
 
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
+}
+function weatherEmoji(description) {
+  let description = response.data.weather[0].description;
+  description = document.querySelector("#now-weather");
+
   let weatherEmoji = response.data.weather[0].icon;
   weatherIcon = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
@@ -67,13 +73,7 @@ function cityTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherEmoji.setAttribute("alt", response.data.weather[0].icon);
-
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
 }
-
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
