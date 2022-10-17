@@ -82,7 +82,7 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
 }
-function weatherEmoji() {
+function weatherEmoji(response) {
   let nowWeather = response.data.weather[0].description;
   nowWeather = document.querySelector("#now-weather");
 
