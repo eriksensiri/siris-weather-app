@@ -61,16 +61,16 @@ function cityTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
 function weatherEmoji() {
-  let nowWeather = response.data.weather[0].icon;
+  let nowWeather = response.data.weather[0].description;
   nowWeather = document.querySelector("#now-weather");
 
   let weatherEmoji = response.data.weather[0].icon;
-  weatherIcon = document.querySelector("#weather-emoji");
+  weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  weatherEmoji.setAttribute("alt", response.data.weather[0].icon);
+  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
 }
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
