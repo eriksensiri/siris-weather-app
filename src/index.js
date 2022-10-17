@@ -26,19 +26,17 @@ function celsiusConverter(event) {
   event.preventDefault();
   let nowTemperature = document.querySelector(".current-temperature");
   nowTemperature.innerHTML = 23;
+  let celsiusTemperature = document.querySelector("#celsius");
+  celsiusTemperature.addEventListener("click", celsiusConverter);
 }
 
 function fahrenheitConverter(event) {
   event.preventDefault();
   let nowTemperature = document.querySelector(".current-temperature");
   nowTemperature.innerHTML = 55;
+  let fahrenheitTemperature = document.querySelector("#fahrenheit");
+  fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 }
-
-let celsiusTemperature = document.querySelector("#celsius");
-celsiusTemperature.addEventListener("click", celsiusConverter);
-
-let fahrenheitTemperature = document.querySelector("#fahrenheit");
-fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
 function cityTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
