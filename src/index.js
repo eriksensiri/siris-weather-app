@@ -17,12 +17,10 @@ function formatDate(date) {
 }
 
 let now = new Date();
+let nowWeather;
 
 let dateElement = document.querySelector("#time");
 dateElement.innerHTML = formatDate(now);
-
-let cityweather = document.querySelector("#location-search");
-cityweather.addEventListener("submit", searchfunction);
 
 function celsiusConverter(event) {
   event.preventDefault();
@@ -52,8 +50,12 @@ function cityTemperature(response) {
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
 
-  let nowWeather = document.querySelector("#now-weather");
-  nowWeather.innerHTML = response.data.weather[0].description;
+  nowWeather = response.data.weather[0].description;
+  let actualIcon = weatherEmoji();
+  let iconElement = document.querySelector("#weather-emoji");
+  iconElement.setAttribute("src", actualIcon);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   let lowestTemperature = Math.round(response.data.main.temp_min);
   let minTemperature = document.querySelector(".min-temperature");
   minTemperature.innerHTML = `${lowestTemperature}`;
@@ -70,15 +72,15 @@ function cityTemperature(response) {
 
 function weatherEmoji() {
   if (nowWeather === "clear sky") {
-    return `icons/sun.png`;
+    return `src/icons/sun.png`;
   }
 
   if (nowWeather === "few clouds") {
-    return `icons/cloud_sun.png`;
+    return `src/icons/cloud_sun.png`;
   }
 
   if (nowWeather === "scattered clouds") {
-    return `icons/cloudy_sun.png`;
+    return `src/icons/cloudy_sun.png`;
   }
 
   if (nowWeather === "broken clouds") {
@@ -101,11 +103,8 @@ function weatherEmoji() {
   if (nowWeather === "mist") {
     return `src/icons/cloud_wind.png`;
   }
-  let weatherEmoji = document.querySelector("#weather-emoji");
-  weatherEmoji.setAttribute(response.data.weather[0].description);
 }
 
-console.log(response.data.weather[0].description);
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -114,10 +113,11 @@ function searchfunction(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-Input").value;
+  console.log({ city });
   searchfunction(city);
 }
-let searchButton = document.querySelector("#submit-button");
-searchButton.addEventListener("click", handleSubmit);
+let searchButton = document.querySelector("#location-search");
+searchButton.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
