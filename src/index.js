@@ -77,7 +77,9 @@ function weatherEmoji() {
   if (nowWeather === "clear") {
     return `src/icons/sun.png`;
   }
-
+  if (nowWeather === "clouds") {
+    return `src/icons/cloud_sun.png`;
+  }
   if (nowWeather === "few clouds") {
     return `src/icons/cloud_sun.png`;
   }
@@ -85,19 +87,43 @@ function weatherEmoji() {
   if (nowWeather === "scattered clouds") {
     return `src/icons/cloudy_sun.png`;
   }
-
+  if (nowWeather === "dust") {
+    return `src/icons/clouds.png`;
+  }
+  if (nowWeather === "smoke") {
+    return `src/icons/clouds.png`;
+  }
+  if (nowWeather === "sand") {
+    return `src/icons/clouds.png`;
+  }
+  if (nowWeather === "ash") {
+    return `src/icons/clouds.png`;
+  }
+  if (nowWeather === "squall") {
+    return `src/icons/clouds.png`;
+  }
   if (nowWeather === "broken clouds") {
     return `src/icons/clouds.png`;
   }
-
+  if (nowWeather === "fog") {
+    return `src/icons/clouds.png`;
+  }
+  if (nowWeather === "haze") {
+    return `src/icons/clouds.png`;
+  }
   if (nowWeather === "shower rain") {
     return `src/icons/sun.png`;
   }
-
+  if (nowWeather === "drizzel") {
+    return `src/icons/ligth_rain.png`;
+  }
   if (nowWeather === "rain") {
     return `src/icons/ligth_rain.png`;
   }
   if (nowWeather === "thunderstorm") {
+    return `src/icons/cloud_rain_ligthing.png`;
+  }
+  if (nowWeather === "tornado") {
     return `src/icons/cloud_rain_ligthing.png`;
   }
   if (nowWeather === "snow") {
