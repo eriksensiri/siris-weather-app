@@ -60,7 +60,7 @@ function cityTemperature(response) {
   let maxTemperature = document.querySelector(".max-temperature");
   maxTemperature.innerHTML = `${highestTemperature}`;
 
-  let weatherEmoji = response.data.weather[0].icon();
+  let weatherEmoji = response.data.weather[0].icon;
   weatherIcon = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
