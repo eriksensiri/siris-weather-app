@@ -60,18 +60,7 @@ function cityTemperature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
-function weatherEmoji() {
-  let nowWeather = response.data.weather[0].description;
-  nowWeather = document.querySelector("#now-weather");
 
-  let weatherEmoji = response.data.weather[0].icon;
-  weatherEmoji = document.querySelector("#weather-emoji");
-  weatherEmoji.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
-}
 function searchfunction(city) {
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -92,6 +81,18 @@ function showPosition(position) {
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
+}
+function weatherEmoji() {
+  let nowWeather = response.data.weather[0].description;
+  nowWeather = document.querySelector("#now-weather");
+
+  let weatherEmoji = response.data.weather[0].icon;
+  weatherEmoji = document.querySelector("#weather-emoji");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getCurrentLocation(event) {
