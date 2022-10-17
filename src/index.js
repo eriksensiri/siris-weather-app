@@ -86,8 +86,7 @@ function weatherEmoji() {
   let nowWeather = response.data.weather[0].description;
   nowWeather = document.querySelector("#now-weather");
 
-  let weatherEmoji = response.data.weather[0].icon;
-  weatherEmoji = document.querySelector("#weather-emoji");
+  let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
