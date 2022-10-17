@@ -41,7 +41,6 @@ let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", fahrenheitConverter);
 
 function cityTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector(".current-temperature");
   currentTemperature.innerHTML = `${temperature}`;
@@ -49,15 +48,6 @@ function cityTemperature(response) {
   let city = response.data.name;
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
-
-  nowWeather = response.data.weather[0].icon;
-  let actualIcon = weatherEmoji();
-  let iconElement = document.querySelector("#weather-emoji");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].icon);
 
   let lowestTemperature = Math.round(response.data.main.temp_min);
   let minTemperature = document.querySelector(".min-temperature");
@@ -67,13 +57,18 @@ function cityTemperature(response) {
   let maxTemperature = document.querySelector(".max-temperature");
   maxTemperature.innerHTML = `${highestTemperature}`;
 
+  let weatherEmoji = response.data.weather[0].icon();
+  let weatherIcon = document.querySelector("#weather-emoji");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherEmoji.setAttribute("alt", response.data.weather[0].icon);
+
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
-}
-
-function weatherEmoji() {
 }
 
 function searchfunction(city) {
