@@ -61,8 +61,8 @@ function cityTemperature(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
 function weatherEmoji() {
-  let description = response.data.weather[0].description;
-  description = document.querySelector("#now-weather");
+  let nowWeather = response.data.weather[0].icon;
+  nowWeather = document.querySelector("#now-weather");
 
   let weatherEmoji = response.data.weather[0].icon;
   weatherIcon = document.querySelector("#weather-emoji");
