@@ -74,6 +74,9 @@ function weatherEmoji() {
   if (nowWeather === "clear sky") {
     return `src/icons/sun.png`;
   }
+  if (nowWeather === "clear") {
+    return `src/icons/sun.png`;
+  }
 
   if (nowWeather === "few clouds") {
     return `src/icons/cloud_sun.png`;
