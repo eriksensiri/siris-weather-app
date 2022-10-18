@@ -59,6 +59,16 @@ function cityTemperature(response) {
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+
+  let nowWeather = document.querySelector("#now-weather");
+  nowWeather = response.data.weather[0].icon;
+
+  let weatherEmoji = document.querySelector("#weather-emoji");
+  weatherEmoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchfunction(city) {
@@ -81,17 +91,6 @@ function showPosition(position) {
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
-}
-function weatherEmoji(response) {
-  let nowWeather = document.querySelector("#now-weather");
-  nowWeather = response.data.weather[0].icon;
-
-  let weatherEmoji = document.querySelector("#weather-emoji");
-  weatherEmoji.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getCurrentLocation(event) {
