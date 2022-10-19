@@ -16,6 +16,44 @@ function formatDate(date) {
   return `${currentDay} | ${currentHour}:${currentMinute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-sm-2 day">
+              <div class="expected-day">Wed</div>
+              <img
+                src="src/icons/cloud_sun.png"
+                alt="cloud_sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">25° | </span>
+                <span class="forecast-expected-temp-min">22°</span>
+              </div>
+            </div>`;
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-sm-2 day">
+              <div class="expected-day">Wed</div>
+              <img
+                src="src/icons/cloud_sun.png"
+                alt="cloud_sun"
+                class="expected-temp-emoji"
+              />
+              <div class="expected-temp">
+                <span class="forecast-expected-temp-max">25° | </span>
+                <span class="forecast-expected-temp-min">22°</span>
+              </div>
+            </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let now = new Date();
 let nowWeather;
 
@@ -99,3 +137,5 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();
