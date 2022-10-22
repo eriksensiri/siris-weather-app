@@ -67,7 +67,7 @@ dateElement.innerHTML = formatDate(now);
 
 function getForecast(coordinates) {
   let apiKey = `b2fo6a4183fddd3et8f2bf45803cb177`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -103,7 +103,7 @@ function cityTemperature(response) {
   );
   weatherEmoji.setAttribute("alt", response.condition[0].description);
 
-  getForecast(response.data.coordinates);
+  getForecast(response.coordinates);
 }
 
 function searchfunction(city) {
