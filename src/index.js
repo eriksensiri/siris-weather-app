@@ -39,17 +39,17 @@ function displayForecast(response) {
            
               <img
                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                  response.condition[0].icon
+                  response.daily.condition[0].icon_url
                 }.png"
                 alt="light rain"
                 class="expected-temp-emoji"
               />
               <div class="expected-temp">
                 <span class="forecast-expected-temp-max">${Math.round(
-                  forecastDay.temp.max
+                  forecastDay.daily.temperature.maximum
                 )}° | </span>
                 <span class="forecast-expected-temp-min">${Math.round(
-                  forecastDay.temp.min
+                  forecastDay.daily.temperature.minimum
                 )}°</span>
               </div>
             </div>`;
