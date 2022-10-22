@@ -65,14 +65,6 @@ let nowWeather;
 let dateElement = document.querySelector("#time");
 dateElement.innerHTML = formatDate(now);
 
-function celsiusConverter(event) {
-  event.preventDefault();
-  let nowTemperature = document.querySelector(".current-temperature");
-  nowTemperature.innerHTML = 23;
-}
-let celsiusTemperature = document.querySelector("#celsius");
-celsiusTemperature.addEventListener("click", celsiusConverter);
-
 function getForecast(coordinates) {
   let apiKey = `f09d3949047ab6c9e3bcaf79cf61f619`;
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
