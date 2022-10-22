@@ -72,11 +72,11 @@ function getForecast(coordinates) {
 }
 
 function cityTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.temperature.current);
   let currentTemperature = document.querySelector(".current-temperature");
   currentTemperature.innerHTML = `${temperature}`;
 
-  let city = response.data.name;
+  let city = response.data.city;
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
 
@@ -89,19 +89,19 @@ function cityTemperature(response) {
   maxTemperature.innerHTML = `${highestTemperature}`;
 
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
+  humidity.innerHTML = response.data.temperature.humidity;
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let nowWeather = document.querySelector("#now-weather");
-  nowWeather.innerHTML = response.data.weather[0].description;
+  nowWeather.innerHTML = response.condition[0].description;
 
   let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.condition[0].icon}.png`
   );
-  weatherEmoji.setAttribute("alt", response.data.weather[0].description);
+  weatherEmoji.setAttribute("alt", response.condition[0].description);
 
   getForecast(response.data.coord);
 }
