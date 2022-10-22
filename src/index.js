@@ -38,9 +38,9 @@ function displayForecast(response) {
               <div class="expected-day">${formatDay(forecastDay.dt)}</div>
            
               <img
-                src="http://openweathermap.org/img/wn/${
-                  forecastDay.weather[0].icon
-                }@2x.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  response.condition[0].icon
+                }.png"
                 alt="light rain"
                 class="expected-temp-emoji"
               />
