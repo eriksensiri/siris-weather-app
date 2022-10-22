@@ -91,7 +91,7 @@ function cityTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.temperature.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
+  wind.innerHTML = Math.round(response.wind.speed);
 
   let nowWeather = document.querySelector("#now-weather");
   nowWeather.innerHTML = response.condition[0].description;
