@@ -103,7 +103,7 @@ function cityTemperature(response) {
   );
   weatherEmoji.setAttribute("alt", response.condition[0].description);
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function searchfunction(city) {
