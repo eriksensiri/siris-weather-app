@@ -72,7 +72,7 @@ function getForecast(coordinates) {
 }
 
 function cityTemperature(response) {
-  let temperature = Math.round(response.temperature.current);
+  let temperature = Math.round(response.data.temperature.current);
   let currentTemperature = document.querySelector(".current-temperature");
   currentTemperature.innerHTML = `${temperature}`;
 
