@@ -114,7 +114,6 @@ function searchfunction(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-Input").value;
-  console.log({ city });
   searchfunction(city);
 }
 let searchButton = document.querySelector("#location-search");
@@ -122,8 +121,8 @@ searchButton.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let apiKey = "b2fo6a4183fddd3et8f2bf45803cb177";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
+  let lat = position.coordinates.latitude;
+  let lon = position.coordinates.longitude;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
 }
