@@ -108,10 +108,10 @@ searchButton.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let apiKey = "b2fo6a4183fddd3et8f2bf45803cb177";
-  let lon = response.data.coordinates.longitude;
-  let lat = response.data.coordinates.latitude;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(getCurrentLocation);
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(cityTemperature);
 }
 
 function getCurrentLocation(event) {
