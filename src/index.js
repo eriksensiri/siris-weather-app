@@ -80,14 +80,6 @@ function cityTemperature(response) {
   let currentCity = document.querySelector("#current-location");
   currentCity.innerHTML = `${city}`;
 
-  let lowestTemperature = Math.round(response.data.main.temp_min);
-  let minTemperature = document.querySelector(".min-temperature");
-  minTemperature.innerHTML = `${lowestTemperature}`;
-
-  let highestTemperature = Math.round(response.data.main.temp_max);
-  let maxTemperature = document.querySelector(".max-temperature");
-  maxTemperature.innerHTML = `${highestTemperature}`;
-
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.temperature.humidity;
   let wind = document.querySelector("#wind");
