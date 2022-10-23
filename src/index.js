@@ -82,11 +82,12 @@ function cityTemperature(response) {
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.temperature.humidity;
+
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.wind.speed);
+  wind.innerHTML = Math.round(response.data.wind.speed);
 
   let nowWeather = document.querySelector("#now-weather");
-  nowWeather.innerHTML = response.condition.description;
+  nowWeather.innerHTML = response.data.condition.description;
 
   let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
