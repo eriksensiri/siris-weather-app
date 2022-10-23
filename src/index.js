@@ -59,13 +59,8 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let now = new Date();
-let nowWeather;
-
-let dateElement = document.querySelector("#time");
-dateElement.innerHTML = formatDate(now);
-
 function getForecast(coordinates) {
+  console.log("getForecast");
   let apiKey = `b2fo6a4183fddd3et8f2bf45803cb177`;
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -82,7 +77,6 @@ function cityTemperature(response) {
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.temperature.humidity;
-
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
 
@@ -101,7 +95,7 @@ function cityTemperature(response) {
 
 function searchfunction(city) {
   let apiKey = "b2fo6a4183fddd3et8f2bf45803cb177";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
 }
 function handleSubmit(event) {
@@ -124,5 +118,12 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+let now = new Date();
+let nowWeather;
+
+let dateElement = document.querySelector("#time");
+dateElement.innerHTML = formatDate(now);
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
