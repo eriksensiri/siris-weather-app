@@ -94,16 +94,16 @@ function cityTemperature(response) {
   wind.innerHTML = Math.round(response.wind.speed);
 
   let nowWeather = document.querySelector("#now-weather");
-  nowWeather.innerHTML = response.condition[0].description;
+  nowWeather.innerHTML = response.condition.description;
 
   let weatherEmoji = document.querySelector("#weather-emoji");
   weatherEmoji.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.condition[0].icon}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  weatherEmoji.setAttribute("alt", response.condition[0].description);
+  weatherEmoji.setAttribute("alt", response.data.condition.description);
 
-  getForecast(response.coordinates);
+  getForecast(response.data.coordinates);
 }
 
 function searchfunction(city) {
