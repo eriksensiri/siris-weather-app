@@ -108,9 +108,9 @@ searchButton.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let apiKey = "b2fo6a4183fddd3et8f2bf45803cb177";
-  let lat = position.coordinates.latitude;
-  let lon = position.coordinates.longitude;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  let lat = response.data.coordinates.latitude;
+  let lon = response.data.coordinates.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(cityTemperature);
 }
 
